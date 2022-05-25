@@ -1,0 +1,110 @@
+<%- include("partials/newheader"); -%>
+<div class="backgroundclr" style="text-align: center;">
+    <h1 style="color:blue;font-family:'Times New Roman', Times, serif;text-align:center">Campus Gallery</h1>
+
+    <div class="gallery" id="gallery">
+        <div class="gallery-item">
+            <div class="content"><img src="images/IMG20211211230553.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/Screenshot 2022-03-01 112748.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/IMG_1952.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/IMG_8801.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/IMG_8935.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/IMG_9070.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/IMG_9750.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/IMG_9754.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/IMG_9762.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/IMG_9838.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/IMG_9857.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/IMG_9884.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/IMG_9890.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/9K6A2475.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/9K6A2658.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/9K6A9055.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/9K6A9113.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/9K6A9127.jpg" alt=""></div>
+        </div>
+        <div class="gallery-item">
+            <div class="content"><img src="images/DSC_0664.jpg" alt=""></div>
+        </div>
+
+        
+       
+    </div>
+
+
+</div>
+
+
+    <!-- currently external script is not working so inline script is used -->
+    <script>
+        var gallery = document.querySelector('#gallery');
+
+var getVal = function (elem, style) { return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); };
+var getHeight = function (item) { return item.querySelector('.content').getBoundingClientRect().height; };
+var resizeAll = function () {
+    var altura = getVal(gallery, 'grid-auto-rows');
+    var gap = getVal(gallery, 'grid-row-gap');
+    gallery.querySelectorAll('.gallery-item').forEach(function (item) {
+        var el = item;
+        el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
+    });
+};
+gallery.querySelectorAll('img').forEach(function (item) {
+    item.classList.add('byebye');
+    if (item.complete) {
+        console.log(item.src);
+    }
+    else {
+        item.addEventListener('load', function () {
+            var altura = getVal(gallery, 'grid-auto-rows');
+            var gap = getVal(gallery, 'grid-row-gap');
+            var gitem = item.parentElement.parentElement;
+            gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
+            item.classList.remove('byebye');
+        });
+    }
+});
+window.addEventListener('resize', resizeAll);
+gallery.querySelectorAll('.gallery-item').forEach(function (item) {
+    item.addEventListener('click', function () {        
+        item.classList.toggle('full');        
+    });
+});
+
+    </script>
+     
+<%- include("partials/mainfooter"); -%>

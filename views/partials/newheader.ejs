@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+    <title>Hostel Management System</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + Rubic main styles -->
+    <link rel="stylesheet" href="/css/images.css">
+    <link rel="stylesheet" href="/css/booking.css">
+	<link rel="stylesheet" href="/css/newheader.css">
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        .dropbtn {
+          background-color: transparent;
+          color: white;
+          border: none;
+          cursor: pointer;
+        }
+        
+        .dropbtn:hover, .dropbtn:focus {
+        background: -webkit-linear-gradient(144deg, #5B42F3, #AF40FF 50%,#00DDEB );
+          color: white;
+          font-size: 18px;
+        }
+        
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: white;
+          min-width: 160px;
+          overflow: auto;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+        
+        .dropdown a:hover {
+            background: #E0E0E0;
+            
+            font-size: 16px !important;
+        }
+
+        .show {display: block;}
+    </style>
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+   
+
+    <nav id="scrollspy" class="navbar page-navbar navbar-dark navbar-expand-md fixed-top" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="navbar-brand" href="../"><strong class="text-primary">IITI</strong><span class="text-light"> Hostels</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="http://hostel.iiti.ac.in/docs/Hostel_Rules.pdf" target="_blank">Hall Rules</a>
+                    </li>
+                    <div class="dropdown">
+                        <li class="nav-item">
+                            <a onclick="myFunction()" class="nav-link dropbtn" href="#pricing">Facilities</a>
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="http://people.iiti.ac.in/~medical/">Health Centre</a>
+                                <a href="https://iiti.ac.in/page/counselling-cell">Counselling Cell</a>
+                                <a href="http://vbs.iiti.ac.in/">Transport Booking</a>
+                                <a href="https://www.iiti.ac.in/public/storage/Green%20vehicle%20schedule-%202021.pdf">Green Vehicle Schedule</a>
+                                <a href="https://iiti.ac.in/page/e-payments">E-Payments</a>
+                                <a href="https://iiti.ac.in/page/campus-facilities">Campus Facilities</a>
+                                <a href="http://safety.iiti.ac.in/">Campus Safety</a>
+                                <a href="http://hostel.iiti.ac.in/docs/Dining_facility.pdf">Dining</a>
+                                <a href="/booking">Hostel Booking</a>
+                            </div>
+                        </li>
+                    </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../complaints">Complaints</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-dark shadow-none ml-md-4" href="../login">Log In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>

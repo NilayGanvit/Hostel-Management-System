@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/profile.css">
+    <script src="https://kit.fontawesome.com/965c30f03e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class = "big-img">
+        <div class = "content">
+                <div class="container" id="container">
+                <div class="form-container sign-in-container">
+                    <form action="/profile" method="POST">
+                        <input type="text" placeholder="Full Name" name="FullName" required/>
+                        <input type="text" placeholder="Department (ex: Computer Science)" name="Department" required/>
+                        <span class="spaceyr">Year of graduation</span>
+                        <input type="number" placeholder="Year" name="Year" required/>
+                        <span>Hostel details (if alloted)</span>
+                        <input type="text" placeholder="Hostel Name" name="HOR"/>
+                        <input type="number" placeholder="Flat number" name="Roomno"/> 
+                        <button class="Finish">Finish</button>
+                    </form>
+                </div>
+                <div class="overlay-container">
+                    <div class="overlay">
+                        <div class="overlay-panel overlay-right">
+                            <h1>Personal and Hall of Residence details.!</h1>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+
+    <script>
+        const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+    
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+    
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+    </script>
+
+</body>
+</html>
+
